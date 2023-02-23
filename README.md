@@ -65,9 +65,9 @@ Here is our [Project Demonstration](#) video
 
 ### Key Features <a name="key-features"></a>
 
-- **1**
-- **2**
-- **3**
+- **users add posts**
+- **users add comments**
+- **user add likes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,8 +128,8 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **1**
-- **2**
+- **Count comments**
+- **Count likes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
