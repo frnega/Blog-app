@@ -133,12 +133,10 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
+<!-- CONTRIBUTING n-->
 
 ## 🤝 Contributing <a name="contributing"></a>
-
 Contributions, issues, and feature requests are welcome!
-
 Feel free to check the [issues page](https://github.com/ginabeki/Catalog-App/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
