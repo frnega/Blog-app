@@ -1,12 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog App</title>
-</head>
-<body>
-<h1>User details</h1>
-</body>
-</html>
+<%= render @user %>
+
+<div class="card m-3">
+  <div class="card-body">
+    <h5 class="card-title">Bio</h5>
+    <p class="card-text"><%= @user.bio || '...' %></p>
+  </div>
+</div>
+
+<h1 class="text-center m-5">Posts</h1>
+
+<% if !@user.posts.empty? %>
+  <%= render @user.posts, locals: {truncate: true, show_comments: false} %>
+<% else %>
+  <p class="text-center m-5">There are no posts yet</p>
+<% end %>
+<%= link_to "See all posts", user_posts_path(@user), class: "btn btn-primary my-5" %>
