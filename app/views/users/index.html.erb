@@ -1,4 +1,8 @@
+
 <section class="" id="users">
+<div class="row justify-content-end">
+<%= link_to "Create Post", new_post_path, class: "btn btn-primary" %>
+</div>
   <ul class="sm:m-10 m-2 grid grid-cols-1 gap-10">
     <% @users.each do |user|%>
       <li class="user h-full">
@@ -15,7 +19,9 @@
             <span class="float-left">Number of Posts: <span><%= user.posts_counter%></span></span>
             </div>
         </div>
+
         </a>
+        
       </li>
     <% end %>
   </ul>
