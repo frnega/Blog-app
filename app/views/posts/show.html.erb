@@ -1,11 +1,26 @@
-<div class="card m-3">
-  <span class="ms-auto">Comments: <%= @post.comments_counter %> | Likes: <%= @post.likes_counter %></span>
-  <div class="card-body">
-    <h5 class="card-title"><%= @post.title %></h5>
-    <p class="card-text"><%= @post.text || '...' %></p>
-  </div>
-</div>
-
-<ul class="col p-0">
-  <%= render @post.comments %>
-</ul>
+<section id="post" class="md:m-10 m-2 flex gap-5 flex-col">
+    <div>
+      <div class="flex flex-col gap-3 py-3 px-6 border border-red-300" id="post-section">
+        <div class="flex justify-between">
+            <h1><span class="font-important tracking-widest text-lg font-semibold"><%= @post.title%> </span>by <a href="/users/<%= @user.id%>" class="font-important tracking-wider text-lg font-semibold hover:text-red-300 underline"><%= @user.name%></a></h1>
+            <span class="flex justify-end">Comments: <%= @post.comments_counter%>  Likes: <%= @post.likes_counter%> </span>
+        </div>
+        <div>
+            <h2 class="px-2 break-words"><%= @post.text%></h2>
+        </div>
+      </div>
+      <div class="" id="comment-section">
+         <div>
+            <h3 class="font-thin tracking-wider font-important my-3">Comments</h3>
+                <ul class="flex gap-3 flex-col px-5 my-3">
+                <% post.comments.each do |comment|%>
+                    <li class="flex flex-col gap-2 p-2 border-l border-red-200 hover:bg-red-300">
+                        <a class="text-sm sm:text-base hover:underline hover:font-bold" href="/users/<%= comment.author.id%>"><%= comment.author.name%>: </a>
+                        <span class="sm:text-base text-sm pl-5"><%= comment.text%></span>
+                    </li>
+                <%end%>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
