@@ -1,10 +1,13 @@
 <section id="post" class="md:m-10 m-2 flex gap-5 flex-col">
     <div>
       <div class="flex flex-col gap-3 py-3 px-6 border border-red-300" id="post-section">
-        <div class="flex justify-between">
-            <h1><span class="font-important tracking-widest text-lg font-semibold"><%= @post.title%> </span>by <a href="/users/<%= @user.id%>" class="font-important tracking-wider text-lg font-semibold hover:text-red-300 underline"><%= @user.name%></a></h1>
-            <span class="flex justify-end">Comments: <%= @post.comments_counter%>  Likes: <%= @post.likes_counter%> </span>
-        </div>
+      <div class="d-flex col p-2">
+      <%= link_to "Comment", new_post_comment_path(post), class: "btn btn-primary me-2" %>
+      <%= form_with url: post_likes_path(post) do |form| %>
+        <%= form.submit "Like", class: "btn btn-secondary" %>
+      <% end %>
+      <span class="ms-auto">Comments: <%= post.comments_counter %> | Likes: <%= post.likes_counter %></span>
+    </div>
         <div>
             <h2 class="px-2 break-words"><%= @post.text%></h2>
         </div>
