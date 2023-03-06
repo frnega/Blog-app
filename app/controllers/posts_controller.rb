@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find_by(id: params[:user_id])
     render file: "#{Rails.root}/public/404.html", status: :not_found, layout: false if @user.nil?
-    @posts = @user.posts
+    @posts = @user.posts.includes(comments: :author)
     render :index, locals: { user: @user, posts: @posts }
   end
 
