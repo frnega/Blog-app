@@ -11,7 +11,6 @@ RSpec.describe 'Users', type: :request do
     it 'has a 200 status code' do
       expect(response).to have_http_status(:ok)
     end
-
   end
 
   describe 'GET show' do
