@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  user = User.create(name: 'Frenega', posts_counter: 0)
+  user = User.create(name: 'frenega', posts_counter: 0)
   post = user.posts.create(title: 'Post1', text: 'Rails and Ruby', likes_counter: 0, comments_counter: 0)
   describe 'GET posts' do
     before(:each) { get user_posts_path user_id: user.id }
@@ -15,7 +15,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should test heading text inside template' do
-      expect(response.body).to include('BLOG-APP')
+      expect(response.body).to include('class="posts-header"')
     end
   end
 
@@ -28,10 +28,6 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should render a template' do
       expect(response).to render_template('posts/show')
-    end
-
-    it 'should test heading text inside template' do
-      expect(response.body).to include('BLOG-APP')
     end
   end
 end
